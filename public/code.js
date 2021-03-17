@@ -119,13 +119,14 @@ function displaySingleTeamData(dataPromise){
 			<h2 class="results-heading">${teamInfo.name}</h2>
 			<p>Created on ${teamInfo.created}</p>
 			<p class="results-subheading">Players:</p>
+			<ul>
 		`;
 
 		// Looping over team players
 		for(let player of teamInfo.players){
-			output += `<p>${player}</p>`;
+			output += `<li class="list-item">${player}</li>`;
 		}
-		console.log(output);
+		output += `</ul>`
 		document.querySelector('#results').innerHTML = output;
 	});
 }
@@ -133,13 +134,12 @@ function displaySingleTeamData(dataPromise){
 
 function displayTeamsData(dataPromise){
 	dataPromise.then(allTeamNames => {
-		let output = `<h2 class="results-heading">Team Names</h2>`;
+		let output = `<h2 class="results-heading">Team Names</h2><ul>`;
 		// Looping over team names
 		for(let teamName of allTeamNames){
-			output += `
-				<p>${teamName}</p>
-			`;
+			output += `<li class="list-item">${teamName}</li>`;
 		}
+		output += `</ul>`
 		document.querySelector('#results').innerHTML = output;
 	});
 }
@@ -149,7 +149,7 @@ function displayPlayerData(dataPromise){
 	dataPromise.then(playerInfo => {
 		let output = `
 			<h2 class="results-heading">${playerInfo.name}</h2>
-			<p class="results-subheading">${playerInfo.country}</p>
+			<p class="results-subheading">Country: ${playerInfo.country}</p>
 		`;
 	
 		document.querySelector('#results').innerHTML = output;
