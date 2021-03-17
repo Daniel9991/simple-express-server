@@ -4,33 +4,35 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Futbol Teams Directory</title>
+	<title>Football Teams Directory</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<div class="container">
 		<div class="header">
-			<h1>Futbol Teams Directory</h1>
+			<h1>Football Teams Directory</h1>
 			<nav>
 				<button class="actionable" id="all-teams-actionable">Discover All Our Teams</button>
 				<div class="search-actionable">
 					<button id="team-actionable" class="actionable">Find Info About Your Team</button>
 					<div class="entry-group" id="team-entry-group">
-						<input type="text" name="teamName" id="team-input">
+						<input type="text" name="teamName" id="team-input" placeholder="Team Name">
 						<input type="submit" value="Find" id="team-find">
 					</div>
 				</div>
 				<div class="search-actionable">
 					<button id="player-actionable" class="actionable">Find Info About A Player</button>
 					<div class="entry-group" id=player-entry-group>
-						<input type="text" name="playerName" id="player-input">
+						<input type="text" name="playerName" id="player-input" placeholder="Player Name">
 						<input type="submit" value="Find" id="player-find">
 					</div>
 				</div>
 			</nav>
 		</div>
-		<div class="results">
+		<div id="results">
 
+		</div>
+		<div id="message-box">Some Shit
 		</div>
 	</div>
 	<script src="code.js"></script>

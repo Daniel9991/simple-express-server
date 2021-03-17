@@ -85,8 +85,13 @@ app.get('/api/player/:playerName', (req, res) => {
 		res.json(player);
 	}
 	else{
-		res.status(400).json({msg: `${req.params.playerName} is not a team we have registered`});
+		res.status(400).json({msg: `${req.params.playerName} is not a player we have registered`});
 	}
+});
+
+
+app.get('/bad', (req, res) => {
+	res.status(400).json({msg: 'Fucked up'});
 });
 
 
