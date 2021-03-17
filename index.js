@@ -90,10 +90,5 @@ app.get('/api/player/:playerName', (req, res) => {
 });
 
 
-app.get('/bad', (req, res) => {
-	res.status(400).json({msg: 'Fucked up'});
-});
-
-
 const PORT = process.env.PORT || 5000; // Setting the PORT number
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`)); // Making the app listen on PORT (and localhost by default)
