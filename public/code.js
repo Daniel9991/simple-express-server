@@ -21,8 +21,10 @@ allTeamsBtn.addEventListener('click', () => {
 	// Hide the other inputs
 	teamBtn.style.display = 'block';
 	teamEntryGroup.style.display = 'none';
+	teamInput.value = '';
 	playerBtn.style.display = 'block';
 	playerEntryGroup.style.display = 'none';
+	playerInput.value = '';
 
 	// Fetching data from the api
 	fetch('/api/teams')
@@ -43,6 +45,7 @@ teamBtn.addEventListener('click', () => {
 	// Hide the player input
 	playerBtn.style.display = 'block';
 	playerEntryGroup.style.display = 'none';
+	playerInput.value = '';
 
 	// Show team input
 	teamBtn.style.display = 'none';
@@ -55,6 +58,7 @@ playerBtn.addEventListener('click', () => {
 	// Hide the team input
 	teamBtn.style.display = 'block';
 	teamEntryGroup.style.display = 'none';
+	teamInput.value = '';
 
 	// Show player input
 	playerBtn.style.display = 'none';
@@ -67,7 +71,7 @@ teamSubmit.addEventListener('click', () => {
 		displayMessage('A team name must be provided.');
 	}
 	else{
-		fetch(`/api/team/${teamInput.value.trim()}`)
+		fetch(`/api/teams/${teamInput.value.trim()}`)
 		.then(res => {
 			if(res.status === 200){
 				displaySingleTeamData(res.json());
